@@ -1,7 +1,7 @@
 /*jslint node: true */
 "use strict";
 
-var NobleDevice = require('noble-device');
+var NobleDevice = require('./lib/noble-device');
 
 var Bean = require('./lib/Bean');
 
