@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "@abandonware/noble": "^1.9.2-5",
-    "crc": "^2.1.1"
+    "crc": "^2.1.1",
+    "patch-package": "^6.2.0",
+    "postinstall-postinstall": "^2.0.0"
   },
   "devDependencies": {
     "chai": "^1.10.0",
@@ -16,7 +18,8 @@
     "sinon": "^1.12.2"
   },
   "scripts": {
-    "test": "mocha --include test/*.js test/*.js --reporter spec"
+    "test": "mocha --include test/*.js test/*.js --reporter spec",
+    "postinstall": "patch-package"
   },
   "repository": "https://github.com/jacobrosenthal/ble-bean",
   "keywords": [
