@@ -55,11 +55,11 @@ var on = false;
 function toggle(){
 
   if(on){
-    connectedBean.write(new Buffer([0x91, 0x00, 0x00]), function(){
+    connectedBean.write(Buffer.from([0x91, 0x00, 0x00]), function(){
       console.log("toggled off");
     });
   }else{
-    connectedBean.write(new Buffer([0x91, 0x20, 0x00]), function(){
+    connectedBean.write(Buffer.from([0x91, 0x20, 0x00]), function(){
       console.log("toggled on");
     });
   }
@@ -78,7 +78,7 @@ var exitHandler = function exitHandler() {
     triedToExit = true;
     console.log('Turning off led...');
     clearInterval(intervalId);
-    connectedBean.setColor(new Buffer([0x0,0x0,0x0]), function(){});
+    connectedBean.setColor(Buffer.from([0x0,0x0,0x0]), function(){});
     //no way to know if succesful but often behind other commands going out, so just wait 2 seconds
     console.log('Disconnecting from Device...');
     setTimeout(connectedBean.disconnect.bind(connectedBean, function(){}), 2000);
