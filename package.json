@@ -19,7 +19,8 @@
   },
   "scripts": {
     "test": "mocha --include test/*.js test/*.js --reporter spec",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "create-patch": "patch-package @abandonware/noble --include .js$"
   },
   "repository": "https://github.com/jacobrosenthal/ble-bean",
   "keywords": [
